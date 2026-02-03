@@ -6,13 +6,14 @@
 body {
   background: #2f2f2f;
   color: #fff;
+  margin: 0;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 0;
-  height: 100vh;
 }
 
+/* HEADER */
 .header {
   text-align: center;
   margin-top: 20px;
@@ -41,7 +42,7 @@ body {
   font-weight: bold;
 }
 
-#restart {
+button {
   padding: 10px 16px;
   border: none;
   border-radius: 8px;
@@ -50,12 +51,14 @@ body {
   background: #ffb703;
 }
 
+/* GAME BOARD */
 .board-wrapper {
   position: relative;
   margin-top: 30px;
 }
 
 .game-board {
+  position: relative; /* 🔴 REQUIRED */
   display: grid;
   grid-template-columns: repeat(4, 90px);
   grid-template-rows: repeat(4, 90px);
@@ -65,6 +68,7 @@ body {
   border-radius: 10px;
 }
 
+/* EMPTY CELLS */
 .cell {
   width: 90px;
   height: 90px;
@@ -72,19 +76,21 @@ body {
   border-radius: 8px;
 }
 
+/* TILES */
 .tile {
   position: absolute;
   width: 90px;
   height: 90px;
+  border-radius: 8px;
   display: flex;
   justify-content: center;
   align-items: center;
-  border-radius: 8px;
   font-size: 28px;
   font-weight: bold;
   transition: transform 0.15s ease, top 0.15s ease, left 0.15s ease;
 }
 
+/* TILE COLORS */
 .tile[data-value="2"] { background: #eee4da; color: #333; }
 .tile[data-value="4"] { background: #ede0c8; color: #333; }
 .tile[data-value="8"] { background: #f2b179; }
@@ -97,10 +103,11 @@ body {
 .tile[data-value="1024"] { background: #edc53f; }
 .tile[data-value="2048"] { background: #edc22e; }
 
+/* GAME OVER OVERLAY */
 .overlay {
   position: absolute;
   inset: 0;
-  background: rgba(0,0,0,0.7);
+  background: rgba(0,0,0,0.75);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -115,14 +122,4 @@ body {
   padding: 30px;
   border-radius: 12px;
   text-align: center;
-}
-
-.overlay-content button {
-  margin-top: 15px;
-  padding: 10px 20px;
-  font-weight: bold;
-  cursor: pointer;
-  border-radius: 8px;
-  border: none;
-  background: #ffb703;
 }

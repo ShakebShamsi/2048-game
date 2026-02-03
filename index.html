@@ -4,7 +4,9 @@
   <meta charset="UTF-8" />
   <title>2048 Master</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="styles.css" />
+
+  <!-- MAKE SURE THIS PATH IS CORRECT -->
+  <link rel="stylesheet" href="/css/styles.css" />
 </head>
 
 <body>
@@ -23,15 +25,16 @@
   <main class="board-wrapper">
     <div id="game-board" class="game-board"></div>
 
+    <!-- GAME OVER OVERLAY -->
     <div id="overlay" class="overlay hidden">
       <div class="overlay-content">
         <h2>Game Over</h2>
         <p>Your Score: <span id="final-score">0</span></p>
-        <button onclick="restartGame()">Play Again</button>
+        <button id="play-again">Play Again</button>
       </div>
     </div>
   </main>
 
-  <script src="script.js"></script>
+  <script src="/src/script.js"></script>
 </body>
 </html>
